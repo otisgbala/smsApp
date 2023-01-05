@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('message_delivery_reports', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInt('message_id');
-            $table->unsignedInt('contact_id');
-            $table->smallInt('deliveryStatus');
+            $table->unsignedInteger('message_id');
+            $table->unsignedInteger('contact_id');
+            $table->tinyInteger('deliveryStatus');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

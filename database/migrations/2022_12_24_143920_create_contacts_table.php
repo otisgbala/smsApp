@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('firstName')->nullable();
             $table->string('lastName')->nullable();
             $table->string('sex')->nullable();
             $table->string('age')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

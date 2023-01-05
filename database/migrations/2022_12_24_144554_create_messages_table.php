@@ -14,10 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('subject')->nullable();
             $table->text('messages');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
